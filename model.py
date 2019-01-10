@@ -11,9 +11,6 @@ import errno
 import progressbar
 
 def read_IMDB_dataset():
-
-	
-
 	path_IMDB = 'aclImdb/train/'
 	filenames = glob.glob(path_IMDB+'pos/*.txt')
 	print(len(filenames))
@@ -26,8 +23,9 @@ def read_IMDB_dataset():
 				dataset += data
 				if(len(data) > maxLength):
 					maxLength = len(data)
-				bar.update(fileIndex)
+			bar.update(fileIndex)
 	print(maxLength)
+
 def __main__():
 	### load dataset ###
 
